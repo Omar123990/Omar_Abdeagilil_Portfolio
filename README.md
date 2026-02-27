@@ -1,16 +1,27 @@
-# React + Vite
+# 🚀 Omar Abdalgilil | Modern Frontend Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my professional portfolio repository! This project is a high-performance, modern web experience built with **React.js** and **Tailwind CSS**, featuring a sleek **Glassmorphism** design and interactive elements.
 
-Currently, two official plugins are available:
+## ✨ Key Features
+* **Modern Design:** Clean UI with Glassmorphism and dark mode aesthetics.
+* **Interactive Components:** Magnetic hover effects and dynamic entrance animations.
+* **Animated Hero:** Typing effect for roles and glowing background orbs.
+* **Fully Responsive:** Optimized for all screen sizes from mobile to ultra-wide monitors.
+* **SEO Optimized:** Meta tags and semantic HTML for better search engine visibility.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
+* **Framework:** React 18
+* **Styling:** Tailwind CSS
+* **Animations:** Custom CSS Keyframes & React-Typed
+* **Icons:** React Icons
+* **Build Tool:** Vite
 
-## React Compiler
+## 📸 Preview
+![Portfolio Preview](https://github.com/Omar123859/Omar_Abdeagilil_Portfolio/blob/main/src/assets/profile.jpeg?raw=true)
+*(Note: Replace this link with your actual screenshot or site link once deployed)*
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Getting Started
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Omar123859/Omar_Abdeagilil_Portfolio.git](https://github.com/Omar123859/Omar_Abdeagilil_Portfolio.git)
