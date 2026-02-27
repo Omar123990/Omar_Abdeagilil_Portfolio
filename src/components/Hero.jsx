@@ -3,6 +3,7 @@ import { personalInfo } from "./data/portfolioData";
 import { FaGithub } from "react-icons/fa";
 import photo from "../assets/profile.png";
 import { ReactTyped } from "react-typed";
+
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -27,6 +28,7 @@ const Hero = () => {
           <img
             src={photo}
             alt="Omar Abdalgilil"
+            loading="eager"
             className="w-[97%] h-[97%] object-cover rounded-full z-10"
           />
           <div className="w-full h-full z-[-1] animate-spin [animation-duration:3s] rounded-full bg-linear-to-r from-purple-600 via-blue-500 to-purple-600 absolute top-0 left-0"></div>
@@ -86,6 +88,7 @@ const Hero = () => {
         >
           <a
             href="#projects"
+            aria-label="Explore My Work"
             className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-medium duration-300 hover:shadow-lg hover:shadow-purple-500/50 transition-all transform hover:-translate-y-1 flex items-center gap-2"
           >
             Explore My Work
@@ -94,9 +97,10 @@ const Hero = () => {
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Visit my GitHub Profile"
             className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-lg font-medium duration-300 flex items-center gap-2 hover:shadow-md hover:shadow-gray-500/50 transition-all transform hover:-translate-y-1"
           >
-            <FaGithub size={20} /> GitHub
+            <FaGithub size={20} aria-hidden="true" /> GitHub
           </a>
         </div>
       </div>

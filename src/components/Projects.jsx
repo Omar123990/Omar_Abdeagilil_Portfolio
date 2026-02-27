@@ -77,6 +77,7 @@ const Projects = () => {
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Live demo for ${project.title}`}
                 onMouseMove={(e) => handleMouseMove(e, index)}
                 onMouseLeave={handleMouseLeave}
                 className="block relative overflow-hidden"
@@ -84,6 +85,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
                   className="w-full h-56 object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                 />
 
@@ -97,7 +99,7 @@ const Projects = () => {
                           : "translate(0, 0)",
                     }}
                   >
-                    <FaExternalLinkAlt /> Live Demo
+                    <FaExternalLinkAlt aria-hidden="true" /> Live Demo
                   </span>
                 </div>
               </a>
@@ -115,9 +117,10 @@ const Projects = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Source code for ${project.title}`}
                     className="text-gray-400 hover:text-white flex items-center gap-2 transition-colors"
                   >
-                    <FaGithub size={20} />
+                    <FaGithub size={20} aria-hidden="true" />
                     <span className="text-sm">Source Code</span>
                   </a>
                 </div>
@@ -131,9 +134,10 @@ const Projects = () => {
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="View All Projects on GitHub"
             className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-purple-500 text-purple-400 hover:bg-purple-600 hover:text-white hover:border-purple-600 rounded-full font-medium transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-purple-500/30"
           >
-            <FaGithub size={22} />
+            <FaGithub size={22} aria-hidden="true" />
             View All Projects on GitHub
           </a>
         </div>

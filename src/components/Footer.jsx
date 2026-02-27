@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -45,22 +45,27 @@ const Footer = () => {
             <a
               href="https://github.com/your-username"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
               className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-purple-600 hover:-translate-y-1 transition-all duration-300"
             >
-              <FaGithub size={20} />
+              <FaGithub size={20} aria-hidden="true" />
             </a>
             <a
               href="https://linkedin.com/in/your-username"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
               className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300"
             >
-              <FaLinkedin size={20} />
+              <FaLinkedin size={20} aria-hidden="true" />
             </a>
             <a
               href="mailto:oalash55@gmail.com"
+              aria-label="Send an Email"
               className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-red-500 hover:-translate-y-1 transition-all duration-300"
             >
-              <FaEnvelope size={20} />
+              <FaEnvelope size={20} aria-hidden="true" />
             </a>
           </div>
         </div>
