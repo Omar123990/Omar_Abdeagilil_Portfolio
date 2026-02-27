@@ -16,10 +16,6 @@ Welcome to my professional portfolio repository! This project is a high-performa
 * **Icons:** React Icons
 * **Build Tool:** Vite
 
-## 📸 Preview
-![Portfolio Preview](https://github.com/Omar123859/Omar_Abdeagilil_Portfolio/blob/main/src/assets/profile.jpeg?raw=true)
-*(Note: Replace this link with your actual screenshot or site link once deployed)*
-
 ## 🚀 Getting Started
 
 1. **Clone the repository:**
