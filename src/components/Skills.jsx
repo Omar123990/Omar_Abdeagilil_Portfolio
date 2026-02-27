@@ -54,7 +54,7 @@ const Skills = () => {
             <div
               key={index}
               ref={(el) => (skillRefs.current[index] = el)}
-              className="bg-gray-800 border border-gray-700 text-gray-300 px-8 py-4 text-lg rounded-2xl shadow-sm hover:-translate-y-2 hover:border-purple-500 hover:text-purple-400 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-purple-500/50 hover:bg-[#0B0F19]/90 cursor-default opacity-0 translate-y-10"
+              className="bg-gray-800 border border-gray-700 text-gray-300 px-8 py-4 text-lg rounded-2xl shadow-sm hover:-translate-y-2 hover:border-purple-500 hover:text-purple-400 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-purple-500/50 hover:bg-[#0B0F19]/90 cursor-none opacity-0 translate-y-10"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {skill}

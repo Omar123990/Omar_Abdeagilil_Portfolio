@@ -4,6 +4,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-linear-to-r from-purple-600/50 via-blue-500/50 to-purple-600/50 rounded-full blur-3xl pointer-events-none z-0 animate-pulse [animation-duration:4s]"></div>
 
       <div className="relative z-10">
+        <CustomCursor />
         <Navbar />
         <Hero />
         <Skills />
