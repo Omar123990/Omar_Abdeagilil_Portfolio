@@ -57,7 +57,7 @@ const Contact = () => {
               <a
                 href={cvLink}
                 download="Omar_Abdalgilil_CV.pdf"
-                className="inline-flex items-center justify-center gap-3 bg-gray-800 hover:bg-purple-600 text-white font-bold py-4 px-8 rounded-full border border-gray-700 hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-purple-500/40"
+                className="inline-flex items-center justify-center gap-3 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full border border-gray-700 hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-purple-500/40"
               >
                 <FaDownload size={20} />
                 Download CV
@@ -76,7 +76,7 @@ const Contact = () => {
                 href={gmailLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-800 duration-300 p-4 rounded-full text-gray-300 hover:text-white hover:bg-purple-600 transition-all shadow-md hover:shadow-purple-500/50"
+                className="duration-300 p-4 border border-gray-700 rounded-full text-gray-300 hover:text-white hover:bg-red-600 transition-all shadow-md hover:shadow-red-500/50"
                 title="Send me an Email"
               >
                 <FaEnvelope size={24} />
@@ -85,7 +85,7 @@ const Contact = () => {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-800 p-4 duration-300 rounded-full text-gray-300 hover:text-white hover:bg-purple-600 transition-all shadow-md hover:shadow-purple-500/50"
+                className=" p-4 duration-300 border border-gray-700 rounded-full text-gray-300 hover:text-white hover:bg-blue-600 transition-all shadow-md hover:shadow-blue-500/50"
               >
                 <FaLinkedin size={24} />
               </a>
@@ -93,7 +93,7 @@ const Contact = () => {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-800 p-4 duration-300 rounded-full text-gray-300 hover:text-white hover:bg-purple-600 transition-all shadow-md hover:shadow-purple-500/50"
+                className=" p-4 duration-300 rounded-full text-gray-300 hover:text-white border border-gray-700 hover:bg-purple-600 transition-all shadow-md hover:shadow-purple-500/50"
               >
                 <FaGithub size={24} />
               </a>

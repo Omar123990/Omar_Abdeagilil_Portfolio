@@ -19,7 +19,7 @@ const Hero = () => {
     >
       <div className="container mx-auto px-6 flex flex-col items-center text-center">
         <div
-          className={`relative flex items-center justify-center z-10 w-60 h-60 md:w-96 md:h-96 rounded-full p-1 mb-6 shadow-2xl transition-all duration-1000 ease-out transform ${
+          className={`relative flex items-center justify-center z-10 w-60 h-60 md:w-110 md:h-110 rounded-full p-1 mb-6 shadow-2xl transition-all duration-1000 ease-out transform ${
             isLoaded
               ? "opacity-100 translate-y-0 scale-100"
               : "opacity-0 translate-y-10 scale-95"
@@ -53,7 +53,7 @@ const Hero = () => {
         </h1>
 
         <h2
-          className={`text-2xl text-gray-400 mb-6 bg-gray-800 px-6 py-3 rounded-full inline-block transition-all duration-1000 ease-out transform ${
+          className={`text-xl md:text-2xl text-gray-400 mb-6 border border-gray-800 bg-gray-900 px-6 py-3 rounded-full inline-block transition-all duration-1000 ease-out transform ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
           style={{ transitionDelay: "600ms" }}

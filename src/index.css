@@ -46,15 +46,6 @@ body {
     transform: translate(0, 0) scale(1);
   }
 }
-@media (min-width: 1024px) {
-  html,
-  body {
-    cursor: none !important;
-  }
-
-  a,
-  button,
-  .clickable {
-    cursor: none !important;
-  }
+.float {
+  animation: float 6s ease-in-out infinite;
 }
