@@ -1,12 +1,9 @@
 import quizMasterImg from "../../assets/QuizMaster.png";
 import cosmosImg from "../../assets/Cosmos-Dashboard.png";
 import lammaImg from "../../assets/Lamma-Social.png";
-import adasaImg from "../../assets/Adasa.png";
 import clarityImg from "../../assets/Clarity-Digital.png";
 import nutriPlanImg from "../../assets/NutriPlan.png";
-import whatsfordinnerImg from "../../assets/what's-for-dinner.png";
-import portfolioImg from "../../assets/port.png";
-import contactHubImg from "../../assets/ContactHub.png";
+import freshCartImg from "../../assets/FreshCart - Google Chrome 11_04_2026 05_32_52 م.png";
 
 import {
   FaHtml5,
@@ -173,6 +170,15 @@ export const skills = [
 export const projects = [
   {
     id: 1,
+    title: "freshCart",
+    description:
+      "An e-commerce platform for fresh produce, offering a seamless shopping experience with a wide selection of fruits and vegetables.",
+    image: freshCartImg,
+    liveLink: "https://frish-cart-qkht1zmug-omar123990s-projects.vercel.app/",
+    githubLink: "https://github.com/Omar123990/FrishCart.git",
+  },
+  {
+    id: 2,
     title: "Lamma Social",
     description:
       "A social media platform for sharing posts and interacting with friends.",
@@ -181,7 +187,7 @@ export const projects = [
     githubLink: "https://github.com/Omar123990/Lamma-App",
   },
   {
-    id: 2,
+    id: 3,
     title: "QuizMaster",
     description:
       "An interactive trivia challenge application to test general knowledge.",
@@ -190,22 +196,13 @@ export const projects = [
     githubLink: "https://github.com/Omar123990/Quiz-App",
   },
   {
-    id: 3,
+    id: 4,
     title: "NutriPlan",
     description:
       "A meal planning and recipe discovery app for a healthy wellness journey.",
     image: nutriPlanImg,
     liveLink: "https://omar123990.github.io/Nutriplan---Design/",
     githubLink: "https://github.com/Omar123990/Nutriplan---Design",
-  },
-  {
-    id: 4,
-    title: "Adasa",
-    description:
-      "A photography blog to discover the art of photography and read articles.",
-    image: adasaImg,
-    liveLink: "https://adasa-nu.vercel.app/",
-    githubLink: "https://github.com/Omar123990/adasa",
   },
   {
     id: 5,
@@ -227,34 +224,4 @@ export const projects = [
     liveLink: "https://omar123990.github.io/COSMOS---Space-Dashboard/",
     githubLink: "https://github.com/Omar123990/COSMOS---Space-Dashboard",
   },
-  {
-    id: 7,
-    title: "what'sfordinner",
-    description:
-      "A meal planning and recipe discovery app for a healthy wellness journey.",
-    image: whatsfordinnerImg,
-    liveLink: "https://omar123990.github.io/What-s-For-Dinner/",
-    githubLink: "https://github.com/Omar123990/What-s-For-Dinner.git",
-  },
-  {
-    id: 8,
-    title: "ContactHub",
-    description:
-      "A contact management application for organizing and managing personal contacts.",
-    image: contactHubImg,
-    liveLink: "https://omar123990.github.io/ContactHub/",
-
-    githubLink: "https://github.com/Omar123990/What-s-For-Dinner.git",
-  },
-  {
-    id: 9,
-    title: "Ahmed Hassan Portfolio",
-    description:
-      "A portfolio website showcasing the work and skills of Ahmed Hassan.",
-    image: portfolioImg,
-    liveLink: "https://omar123990.github.io/Personal-Portfolio-2/",
-    githubLink: "https://github.com/Omar123990/Personal-Portfolio-2.git",
-  },
 ];
-// https://github.com/Omar123990/ContactHub.git
-// https://omar123990.github.io/ContactHub/
