@@ -1,9 +1,10 @@
 import quizMasterImg from "../../assets/QuizMaster.png";
 import cosmosImg from "../../assets/Cosmos-Dashboard.png";
 import lammaImg from "../../assets/Lamma-Social.png";
-import clarityImg from "../../assets/Clarity-Digital.png";
+// import clarityImg from "../../assets/Clarity-Digital.png";
 import nutriPlanImg from "../../assets/NutriPlan.png";
 import freshCartImg from "../../assets/FreshCart - Google Chrome 11_04_2026 05_32_52 م.png";
+import CineStream from "../../assets/CineStream _ Watch Movies & TV Shows - Google Chrome 16_05_2026 02_50_02 م.png";
 
 import {
   FaHtml5,
@@ -169,6 +170,15 @@ export const skills = [
 
 export const projects = [
   {
+    id: 0,
+    title: "CineStream",
+    description:
+      "A movie streaming platform that offers a wide selection of high-quality movies and TV shows.",
+    image: CineStream,
+    liveLink: "https://cine-stream-rosy-phi.vercel.app/",
+    githubLink: "https://github.com/Omar123990/CineStream.git",
+  },
+  {
     id: 1,
     title: "freshCart",
     description:
@@ -204,17 +214,17 @@ export const projects = [
     liveLink: "https://omar123990.github.io/Nutriplan---Design/",
     githubLink: "https://github.com/Omar123990/Nutriplan---Design",
   },
-  {
-    id: 5,
-    title: "Clarity Digital",
-    description:
-      "A digital solutions landing page showcasing services and business growth.",
-    image: clarityImg,
-    liveLink:
-      "https://omar123990.github.io/Clarity---Digital-Solutions-Platform/",
-    githubLink:
-      "https://github.com/Omar123990/Clarity---Digital-Solutions-Platform",
-  },
+  // {
+  //   id: 5,
+  //   title: "Clarity Digital",
+  //   description:
+  //     "A digital solutions landing page showcasing services and business growth.",
+  //   image: clarityImg,
+  //   liveLink:
+  //     "https://omar123990.github.io/Clarity---Digital-Solutions-Platform/",
+  //   githubLink:
+  //     "https://github.com/Omar123990/Clarity---Digital-Solutions-Platform",
+  // },
   {
     id: 6,
     title: "Cosmos Dashboard",
