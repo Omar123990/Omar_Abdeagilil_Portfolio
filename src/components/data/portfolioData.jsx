@@ -1,10 +1,11 @@
 import quizMasterImg from "../../assets/QuizMaster.png";
 import cosmosImg from "../../assets/Cosmos-Dashboard.png";
 import lammaImg from "../../assets/Lamma-Social.png";
-// import clarityImg from "../../assets/Clarity-Digital.png";
+import clarityImg from "../../assets/Clarity-Digital.png";
 import nutriPlanImg from "../../assets/NutriPlan.png";
 import freshCartImg from "../../assets/FreshCart - Google Chrome 11_04_2026 05_32_52 م.png";
 import CineStream from "../../assets/CineStream _ Watch Movies & TV Shows - Google Chrome 16_05_2026 02_50_02 م.png";
+import LUXE from "../../assets/LUXE.png";
 
 import {
   FaHtml5,
@@ -175,7 +176,7 @@ export const projects = [
     description:
       "A movie streaming platform that offers a wide selection of high-quality movies and TV shows.",
     image: CineStream,
-    liveLink: "https://cine-stream-rosy-phi.vercel.app/",
+    liveLink: "https://cine-stream-murex.vercel.app/",
     githubLink: "https://github.com/Omar123990/CineStream.git",
   },
   {
@@ -198,6 +199,15 @@ export const projects = [
   },
   {
     id: 3,
+    title: "LUXE FASHION",
+    description:
+      "A high-end fashion e-commerce website showcasing the latest trends and exclusive collections.",
+    image: LUXE,
+    liveLink: "https://luxe-gules-omega.vercel.app/",
+    githubLink: "https://github.com/Omar123990/luxe.git",
+  },
+  {
+    id: 4,
     title: "QuizMaster",
     description:
       "An interactive trivia challenge application to test general knowledge.",
@@ -206,7 +216,7 @@ export const projects = [
     githubLink: "https://github.com/Omar123990/Quiz-App",
   },
   {
-    id: 4,
+    id: 5,
     title: "NutriPlan",
     description:
       "A meal planning and recipe discovery app for a healthy wellness journey.",
@@ -214,19 +224,19 @@ export const projects = [
     liveLink: "https://omar123990.github.io/Nutriplan---Design/",
     githubLink: "https://github.com/Omar123990/Nutriplan---Design",
   },
-  // {
-  //   id: 5,
-  //   title: "Clarity Digital",
-  //   description:
-  //     "A digital solutions landing page showcasing services and business growth.",
-  //   image: clarityImg,
-  //   liveLink:
-  //     "https://omar123990.github.io/Clarity---Digital-Solutions-Platform/",
-  //   githubLink:
-  //     "https://github.com/Omar123990/Clarity---Digital-Solutions-Platform",
-  // },
   {
     id: 6,
+    title: "Clarity Digital",
+    description:
+      "A digital solutions landing page showcasing services and business growth.",
+    image: clarityImg,
+    liveLink:
+      "https://omar123990.github.io/Clarity---Digital-Solutions-Platform/",
+    githubLink:
+      "https://github.com/Omar123990/Clarity---Digital-Solutions-Platform",
+  },
+  {
+    id: 7,
     title: "Cosmos Dashboard",
     description:
       "A space dashboard displaying real-time data and the astronomy picture of the day.",
