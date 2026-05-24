@@ -1,5 +1,6 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { personalInfo } from "./data/portfolioData";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,10 +11,11 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-center md:text-left">
             <h2 className="text-2xl font-bold text-white mb-2">
-              Omar <span className="text-purple-500">Abdalgilil</span>
+              Omar <span className="text-purple-500">Abdelglil</span>
             </h2>
             <p className="text-gray-400 max-w-xs">
-              Building digital experiences with passion and precision.
+              Building polished and practical digital experiences with React and
+              Tailwind.
             </p>
           </div>
 
@@ -43,7 +45,7 @@ const Footer = () => {
 
           <div className="flex gap-5">
             <a
-              href="https://github.com/your-username"
+              href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"
@@ -52,7 +54,7 @@ const Footer = () => {
               <FaGithub size={20} aria-hidden="true" />
             </a>
             <a
-              href="https://linkedin.com/in/your-username"
+              href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
@@ -61,7 +63,7 @@ const Footer = () => {
               <FaLinkedin size={20} aria-hidden="true" />
             </a>
             <a
-              href="mailto:oalash55@gmail.com"
+              href={`mailto:${personalInfo.email}`}
               aria-label="Send an Email"
               className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-red-500 hover:-translate-y-1 transition-all duration-300"
             >
@@ -73,7 +75,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-white/5 text-center">
           <p className="text-gray-500 text-sm">
             &copy; {currentYear} Designed & Built by{" "}
-            <span className="text-purple-400">Omar Abdalgilil</span>.
+            <span className="text-purple-400">Omar Abdelglil</span>.
           </p>
         </div>
       </div>

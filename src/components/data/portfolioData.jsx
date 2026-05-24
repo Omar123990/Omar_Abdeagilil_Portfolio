@@ -32,10 +32,10 @@ import {
 import { VscVscode } from "react-icons/vsc";
 
 export const personalInfo = {
-  name: "Omar Abdalgilil",
+  name: "Omar Abdelgilil",
   role: "Frontend Developer",
   about:
-    "A passionate Frontend Developer specializing in building modern web applications and exceptional user experiences. I focus on writing clean code, creating responsive designs, and utilizing the latest web technologies.",
+    "I design and build modern, responsive web experiences using React, Next.js, and Tailwind CSS. I focus on clean code, smooth UX, and interfaces that feel polished from the first scroll.",
   github: "https://github.com/Omar123990",
   email: "oalash55@gmail.com",
   linkedin: "https://www.linkedin.com/in/omar-abdalgilil-7b162b374",
@@ -174,74 +174,82 @@ export const projects = [
     id: 0,
     title: "CineStream",
     description:
-      "A movie streaming platform that offers a wide selection of high-quality movies and TV shows.",
+      "A movie streaming experience focused on fast browsing, polished visuals, and a smooth entertainment-first flow.",
     image: CineStream,
     liveLink: "https://cine-stream-murex.vercel.app/",
     githubLink: "https://github.com/Omar123990/CineStream.git",
+    tags: ["Next.js", "React", "Responsive UI", "Movie Platform"],
   },
   {
     id: 1,
     title: "freshCart",
     description:
-      "An e-commerce platform for fresh produce, offering a seamless shopping experience with a wide selection of fruits and vegetables.",
+      "A clean e-commerce interface for fresh produce with strong product presentation and a conversion-friendly layout.",
     image: freshCartImg,
     liveLink: "https://frish-cart-qkht1zmug-omar123990s-projects.vercel.app/",
     githubLink: "https://github.com/Omar123990/FrishCart.git",
+    tags: ["Next.js", "React", "E-commerce", "Tailwind CSS"],
   },
   {
     id: 2,
     title: "Lamma Social",
     description:
-      "A social media platform for sharing posts and interacting with friends.",
+      "A social media concept built to highlight engaging content flows and a friendly, modern community style.",
     image: lammaImg,
     liveLink: "https://lamma-app-amber.vercel.app/",
     githubLink: "https://github.com/Omar123990/Lamma-App",
+    tags: ["Next.js", "React", "Social UI", "Modern Layout"],
   },
   {
     id: 3,
     title: "LUXE FASHION",
     description:
-      "A high-end fashion e-commerce website showcasing the latest trends and exclusive collections.",
+      "A premium fashion landing page designed to convey luxury, editorial aesthetics, and strong brand presence.",
     image: LUXE,
     liveLink: "https://luxe-gules-omega.vercel.app/",
     githubLink: "https://github.com/Omar123990/luxe.git",
+    tags: ["Next.js", "Ecommerce", "Brand Design", "Responsive"],
   },
   {
     id: 4,
     title: "QuizMaster",
     description:
-      "An interactive trivia challenge application to test general knowledge.",
+      "An interactive trivia app with a playful interface and quick user feedback for a fun learning flow.",
     image: quizMasterImg,
     liveLink: "https://omar123990.github.io/Quiz-App/",
     githubLink: "https://github.com/Omar123990/Quiz-App",
+    tags: ["JavaScript", "OOP", "Interactive UI", "Quiz App"],
   },
   {
     id: 5,
     title: "NutriPlan",
     description:
-      "A meal planning and recipe discovery app for a healthy wellness journey.",
+      "A wellness-oriented app concept centered on meal planning, guidance, and a calm visual experience.",
     image: nutriPlanImg,
     liveLink: "https://omar123990.github.io/Nutriplan---Design/",
     githubLink: "https://github.com/Omar123990/Nutriplan---Design",
+    tags: ["UI Design", "Wellness", "Frontend"],
   },
   {
     id: 6,
     title: "Clarity Digital",
     description:
-      "A digital solutions landing page showcasing services and business growth.",
+      "A services-focused landing page built to communicate business value and encourage action clearly.",
     image: clarityImg,
     liveLink:
       "https://omar123990.github.io/Clarity---Digital-Solutions-Platform/",
     githubLink:
       "https://github.com/Omar123990/Clarity---Digital-Solutions-Platform",
+    tags: ["Landing Page", "Conversion", "Brand"],
   },
   {
     id: 7,
     title: "Cosmos Dashboard",
     description:
-      "A space dashboard displaying real-time data and the astronomy picture of the day.",
+      "A data-rich dashboard concept with an immersive space theme and clear visual hierarchy.",
     image: cosmosImg,
     liveLink: "https://omar123990.github.io/COSMOS---Space-Dashboard/",
     githubLink: "https://github.com/Omar123990/COSMOS---Space-Dashboard",
+    tags: ["Dashboard", "NASA API", "Data UI", "Creative Design"],
   },
 ];

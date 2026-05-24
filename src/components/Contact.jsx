@@ -21,7 +21,10 @@ const Contact = () => {
   const cvLink = "/omar_cv.pdf";
 
   return (
-    <section id="contact" className="py-20 bg-transparent border-t border-gray-800">
+    <section
+      id="contact"
+      className="py-20 bg-transparent border-t border-gray-800"
+    >
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-white mb-4">
@@ -56,7 +59,7 @@ const Contact = () => {
 
               <a
                 href={cvLink}
-                download="Omar_Abdalgilil_CV.pdf"
+                download="Omar_Abdelgilil_CV.pdf"
                 className="inline-flex items-center justify-center gap-3 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full border border-gray-700 hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-purple-500/40"
               >
                 <FaDownload size={20} />

@@ -61,18 +61,31 @@ const Projects = () => {
       className="py-20 bg-transparent border-t border-gray-800"
     >
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">
-          My Latest <span className="text-purple-500">Projects</span>
-        </h2>
+        <div className="max-w-2xl mx-auto text-center mb-12">
+          <p className="text-purple-300 uppercase tracking-[0.3em] text-sm mb-3">
+            Featured Work
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Recent projects built with{" "}
+            <span className="text-purple-500">clarity</span>
+            and a strong user focus.
+          </h2>
+          <p className="text-gray-300 text-base">
+            Each project balances performance, clean UX, and a polished visual
+            experience.
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
               key={project.id}
               ref={(el) => (projectCardsRef.current[index] = el)}
-              className="bg-linear-to-r from-purple-600/10 via-blue-500/10 to-purple-600/10 backdrop-blur-md border border-gray-800 rounded-2xl overflow-hidden hover:-translate-y-3 hover:shadow-xl hover:shadow-purple-500/50 transition-all duration-500 ease-out opacity-0 translate-y-10 group"
+              className="group relative overflow-hidden rounded-[28px] border border-gray-800 bg-linear-to-br from-purple-600/10 via-blue-500/10 to-purple-600/10 backdrop-blur-md opacity-0 translate-y-10 transition-all duration-500 ease-out hover:-translate-y-3 hover:border-purple-400/60 hover:shadow-[0_20px_80px_rgba(139,92,246,0.22)]"
               style={{ transitionDelay: `${index * 150}ms` }}
             >
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+
               <a
                 href={project.liveLink}
                 target="_blank"
@@ -86,10 +99,10 @@ const Projects = () => {
                   src={project.image}
                   alt={project.title}
                   loading="lazy"
-                  className="w-full h-56 object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  className="w-full h-56 object-cover object-top opacity-85 transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
                 />
 
-                <div className="absolute inset-0 bg-purple-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                <div className="absolute inset-0 flex items-center justify-center bg-purple-950/10 opacity-0 transition-all duration-300 group-hover:opacity-100">
                   <span
                     className="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-lg flex items-center gap-2 font-medium transition-transform duration-200 ease-out"
                     style={{
@@ -104,13 +117,26 @@ const Projects = () => {
                 </div>
               </a>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">
+              <div className="relative z-10 p-6">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-200 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 mb-6 text-sm line-clamp-2">
+                <p className="text-gray-300 mb-4 text-sm leading-relaxed line-clamp-2">
                   {project.description}
                 </p>
+
+                {project.tags?.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-purple-500/40 bg-purple-500/10 px-3 py-1 text-[11px] font-medium text-purple-100"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
 
                 <div className="flex justify-between items-center border-t border-gray-800 pt-4">
                   <a
@@ -118,7 +144,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Source code for ${project.title}`}
-                    className="text-gray-400 hover:text-white flex items-center gap-2 transition-colors"
+                    className="text-gray-300 hover:text-white flex items-center gap-2 transition-colors"
                   >
                     <FaGithub size={20} aria-hidden="true" />
                     <span className="text-sm">Source Code</span>

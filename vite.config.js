@@ -12,9 +12,9 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.svg", "robots.txt", "apple-touch-icon.png"],
       manifest: {
-        name: "Omar Abdalgilil Portfolio",
+        name: "Omar Abdelglil Portfolio",
         short_name: "Omar Portfolio",
-        description: "Frontend Developer Portfolio of Omar Abdalgilil",
+        description: "Frontend Developer Portfolio of Omar Abdelglil",
         theme_color: "#0B0F19",
         icons: [
           {
