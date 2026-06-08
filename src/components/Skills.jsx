@@ -4,7 +4,6 @@ import { skills } from "./data/portfolioData";
 const Skills = () => {
   const [activeSkill, setActiveSkill] = useState(0);
   const [activeSubSkill, setActiveSubSkill] = useState(null);
-
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -16,7 +15,7 @@ const Skills = () => {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.12 },
     );
 
     if (sectionRef.current) {
@@ -25,10 +24,6 @@ const Skills = () => {
 
     return () => observer.disconnect();
   }, []);
-
-  const handleSkillChange = (index) => {
-    setActiveSkill(index);
-  };
 
   useEffect(() => {
     if (activeSubSkill) {
@@ -49,64 +44,70 @@ const Skills = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12 md:mb-20">
-          Technical <span className="text-purple-500">Arsenal</span>
+          Technical <span className="text-teal-300">Arsenal</span>
         </h2>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto items-start">
-          <div className="flex flex-col gap-3 md:gap-4">
+          <div className="flex flex-col gap-4 md:gap-5">
             {skills.map((skill, index) => (
               <button
-                key={index}
-                onClick={() => handleSkillChange(index)}
-                className={`flex items-center gap-4 md:gap-5 p-4 md:p-6 rounded-2xl cursor-pointer transition-all duration-300 border text-left 
-                  ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} 
-                  ${
-                    activeSkill === index
-                      ? "bg-purple-500/10 border-purple-500 shadow-[0_0_25px_rgba(168,85,247,0.15)]"
-                      : "bg-gray-800/40 border-gray-700 hover:border-gray-500 hover:bg-gray-800/60"
-                  }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
+                key={skill.title}
+                onClick={() => setActiveSkill(index)}
+                className={`flex items-center gap-4 p-5 rounded-3xl cursor-pointer transition-all duration-300 border text-left ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                } ${
+                  activeSkill === index
+                    ? "bg-linear-to-r from-teal-400/10 via-cyan-400/10 to-purple-500/10 border-teal-300/30 shadow-[0_20px_70px_rgba(56,189,248,0.12)]"
+                    : "bg-white/5 border-white/10 hover:border-teal-300/40 hover:bg-white/5"
+                }`}
+                style={{ transitionDelay: `${index * 80}ms` }}
               >
                 <div
-                  className={`text-2xl md:text-3xl transition-transform duration-300 ${activeSkill === index ? "scale-110" : ""}`}
+                  className={`text-3xl transition-transform duration-300 ${activeSkill === index ? "scale-110" : ""}`}
                 >
                   {skill.icon}
                 </div>
-                <span className="text-lg md:text-xl font-semibold text-white">
-                  {skill.title}
-                </span>
+                <div>
+                  <p className="text-lg md:text-xl font-semibold text-white">
+                    {skill.title}
+                  </p>
+                  <p className="text-sm text-gray-400 mt-1 hidden md:block">
+                    {skill.subSkills.length} tools
+                  </p>
+                </div>
               </button>
             ))}
           </div>
 
-          <div className="bg-gray-800/20 border border-gray-700/50 p-6 md:p-8 lg:p-10 rounded-3xl backdrop-blur-sm lg:sticky top-24 h-auto min-h-100 flex flex-col transition-all duration-500">
-            <div className="flex flex-col transition-opacity duration-500">
-              <div className="text-5xl md:text-6xl mb-6 text-purple-500 transition-transform duration-300">
+          <div className="relative rounded-4xl border border-white/10 bg-[#08101d]/90 p-8 shadow-[0_20px_70px_rgba(15,23,42,0.5)] min-h-112">
+            <div className="absolute -top-7 right-5 h-24 w-24 rounded-full bg-teal-400/10 blur-3xl" />
+            <div className="relative z-10">
+              <div className="text-6xl md:text-7xl mb-6 text-teal-300 transition-transform duration-300">
                 {skills[activeSkill].icon}
               </div>
-
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 underline decoration-purple-500/30 underline-offset-8 transition-opacity duration-300">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 {skills[activeSkill].title}
               </h3>
-
-              <p className="text-gray-400 text-base md:text-lg leading-relaxed italic transition-opacity duration-300">
+              <p className="text-gray-400 text-base md:text-lg leading-relaxed italic">
                 "{skills[activeSkill].description}"
               </p>
 
-              <div className="grid grid-cols-2 gap-3 md:gap-4 mt-8">
-                {skills[activeSkill].subSkills.map((sub, i) => (
-                  <div
-                    key={i}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
+                {skills[activeSkill].subSkills.map((sub) => (
+                  <button
+                    key={sub.name}
                     onClick={() => setActiveSubSkill(sub)}
-                    className="flex items-center gap-3 md:gap-4 bg-[#0B0F19]/60 p-3 md:p-4 rounded-xl border border-gray-700/50 group hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-[0_0_15px_rgba(168,85,247,0.2)]"
+                    className="group flex items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-4 text-left transition-all duration-300 hover:-translate-y-1 hover:border-teal-300/40 hover:bg-teal-400/10 min-w-0"
                   >
-                    <span className="text-xl md:text-2xl group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 shrink-0">
+                    <span className="text-2xl transition-transform duration-300 group-hover:scale-110">
                       {sub.icon}
                     </span>
-                    <span className="text-sm md:text-base text-gray-200 font-medium whitespace-nowrap overflow-hidden text-ellipsis">
+                    <span className="text-sm font-medium text-white">
                       {sub.name}
                     </span>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
@@ -117,39 +118,33 @@ const Skills = () => {
       {activeSubSkill && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
             onClick={() => setActiveSubSkill(null)}
-          ></div>
+          />
 
-          <div className="relative bg-[#0B0F19] border border-purple-500/30 p-8 md:p-12 rounded-4xl shadow-[0_0_40px_rgba(168,85,247,0.15)] w-full max-w-lg flex flex-col items-center text-center animate-in zoom-in-95 fade-in duration-300 z-10">
+          <div className="relative z-10 w-full max-w-xl rounded-[36px] border border-teal-300/10 bg-[#04111f] p-8 shadow-[0_20px_80px_rgba(16,185,129,0.18)]">
             <button
               onClick={() => setActiveSubSkill(null)}
-              className="absolute top-5 right-5 text-gray-400 hover:text-white bg-gray-800 hover:bg-gray-700 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300"
+              className="absolute right-6 top-6 rounded-full bg-white/5 p-3 text-xl text-gray-300 transition-all duration-300 hover:bg-white/10 hover:text-white"
               aria-label="Close details"
             >
               ✕
             </button>
 
-            <div className="text-7xl md:text-8xl mb-6 text-purple-400 drop-shadow-[0_0_20px_rgba(168,85,247,0.3)] animate-bounce-slow">
-              {activeSubSkill.icon}
+            <div className="text-center">
+              <div className="mb-6 text-6xl text-teal-300">
+                {activeSubSkill.icon}
+              </div>
+              <h4 className="text-3xl font-bold text-white mb-4">
+                {activeSubSkill.name}
+              </h4>
+              <p className="text-gray-300 text-base leading-relaxed">
+                {activeSubSkill.desc}
+              </p>
+              <div className="mt-8 inline-flex rounded-full border border-teal-300/20 bg-teal-300/10 px-6 py-3 text-sm font-semibold text-teal-200">
+                Click anywhere outside this card to close.
+              </div>
             </div>
-
-            <h4 className="text-2xl md:text-4xl font-bold text-white mb-4 tracking-wide">
-              {activeSubSkill.name}
-            </h4>
-
-            <div className="w-16 h-1 bg-purple-500 mx-auto mb-6 rounded-full shrink-0"></div>
-
-            <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-8">
-              {activeSubSkill.desc}
-            </p>
-
-            <button
-              onClick={() => setActiveSubSkill(null)}
-              className="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/40 w-full sm:w-auto"
-            >
-              Got it!
-            </button>
           </div>
         </div>
       )}

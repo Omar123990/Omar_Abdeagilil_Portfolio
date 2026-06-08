@@ -37,8 +37,8 @@ export const personalInfo = {
   about:
     "I design and build modern, responsive web experiences using React, Next.js, and Tailwind CSS. I focus on clean code, smooth UX, and interfaces that feel polished from the first scroll.",
   github: "https://github.com/Omar123990",
-  email: "oalash55@gmail.com",
-  linkedin: "https://www.linkedin.com/in/omar-abdalgilil-7b162b374",
+  email: "omar.abdelglil.work@gmail.com",
+  linkedin: "https://www.linkedin.com/in/omar-abdelgilil-7b162b374/",
 };
 
 export const skills = [
@@ -204,11 +204,11 @@ export const projects = [
     id: 3,
     title: "LUXE FASHION",
     description:
-      "A premium fashion landing page designed to convey luxury, editorial aesthetics, and strong brand presence.",
+      "A premium e-commerce storefront built with Next.js and connected to dummyjson for live product data, cart interaction, and polished shopping flows.",
     image: LUXE,
     liveLink: "https://luxe-gules-omega.vercel.app/",
     githubLink: "https://github.com/Omar123990/luxe.git",
-    tags: ["Next.js", "Ecommerce", "Brand Design", "Responsive"],
+    tags: ["Next.js", "Ecommerce", "API Integration", "DummyJSON"],
   },
   {
     id: 4,

@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
@@ -7,17 +8,20 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-[#0B0F19] min-h-screen font-sans relative overflow-hidden">
-      <div className="fixed top-[-10%] left-[-10%] w-150 h-150 bg-purple-600/50 rounded-full blur-3xl pointer-events-none z-0 animate-pulse [animation-duration:2s]"></div>
-      <div className="fixed bottom-[-10%] right-[-10%] w-150 h-150 bg-blue-600/50 rounded-full blur-3xl pointer-events-none z-0  animate-pulse [animation-duration:2s]"></div>
-      <div className="fixed hidden xl:block top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-linear-to-r from-purple-600/50 via-blue-500/50 to-purple-600/50 rounded-full blur-3xl pointer-events-none z-0 animate-pulse [animation-duration:4s]"></div>
+    <div className="min-h-screen font-sans relative overflow-hidden bg-[#04070f] text-white">
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.18),transparent_20%),radial-gradient(circle_at_bottom_right,rgba(79,70,229,0.12),transparent_25%),linear-gradient(180deg,#04070f_0%,#02040a_100%)] pointer-events-none -z-10"></div>
+      <div className="pointer-events-none absolute -left-24 top-10 h-60 w-60 rounded-full bg-cyan-500/10 blur-3xl animate-pulse" />
+      <div className="pointer-events-none absolute -right-24 bottom-10 h-70 w-70 rounded-full bg-pink-500/10 blur-3xl animate-pulse" />
 
       <div className="relative z-10">
         <Navbar />
-        <Hero />
-        <Skills />
-        <Projects />
-        <Contact />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
         <Footer />
       </div>
     </div>

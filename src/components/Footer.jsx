@@ -1,81 +1,102 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp } from "react-icons/fa";
 import { personalInfo } from "./data/portfolioData";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative z-10 bg-transparent border-t border-white/10 pt-12 pb-8">
+    <footer className="relative z-10 border-t border-teal-300/10 bg-[#02050d]/90 py-12 text-white">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-center md:text-left">
-            <h2 className="text-2xl font-bold text-white mb-2">
-              Omar <span className="text-purple-500">Abdelglil</span>
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.9fr_0.9fr] items-start max-w-full">
+          <div>
+            <p className="text-sm uppercase tracking-[0.35em] text-teal-300 mb-4">
+              Stay connected
+            </p>
+            <h2 className="text-3xl font-bold mb-3 text-white">
+              Let&apos;s build something with Next.js and React.
             </h2>
-            <p className="text-gray-400 max-w-xs">
-              Building polished and practical digital experiences with React and
-              Tailwind.
+            <p className="max-w-xl text-gray-400 leading-relaxed">
+              I create modern frontend experiences with strong performance and
+              polished visual language. Reach out if you want a fast,
+              responsive, and beautiful web product.
             </p>
           </div>
 
-          <div className="flex gap-6 text-gray-400 text-sm font-medium">
-            <a href="#hero" className="hover:text-purple-500 transition-colors">
-              Home
-            </a>
-            <a
-              href="#skills"
-              className="hover:text-purple-500 transition-colors"
-            >
-              Skills
-            </a>
-            <a
-              href="#projects"
-              className="hover:text-purple-500 transition-colors"
-            >
-              Projects
-            </a>
-            <a
-              href="#contact"
-              className="hover:text-purple-500 transition-colors"
-            >
-              Contact
-            </a>
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-white mb-3">
+              Quick links
+            </h3>
+            <div className="grid gap-3 text-gray-300 text-sm">
+              <a href="#hero" className="transition-colors hover:text-teal-300">
+                Home
+              </a>
+              <a
+                href="#skills"
+                className="transition-colors hover:text-teal-300"
+              >
+                Skills
+              </a>
+              <a
+                href="#projects"
+                className="transition-colors hover:text-teal-300"
+              >
+                Projects
+              </a>
+              <a
+                href="#contact"
+                className="transition-colors hover:text-teal-300"
+              >
+                Contact
+              </a>
+            </div>
           </div>
 
-          <div className="flex gap-5">
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-white mb-3">
+              Connect with me
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+                className="inline-flex min-w-12 h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-white transition-all duration-300 hover:bg-teal-400 hover:text-slate-950"
+              >
+                <FaGithub size={18} />
+              </a>
+              <a
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+                className="inline-flex min-w-12 h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-white transition-all duration-300 hover:bg-blue-600 hover:text-white hover:scale-105"
+              >
+                <FaLinkedin size={18} />
+              </a>
+              <a
+                href={`mailto:${personalInfo.email}`}
+                aria-label="Send an Email"
+                className="inline-flex min-w-12 h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-white transition-all duration-300 hover:bg-red-500 hover:text-white hover:scale-105"
+              >
+                <FaEnvelope size={18} />
+              </a>
+            </div>
             <a
-              href={personalInfo.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub Profile"
-              className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-purple-600 hover:-translate-y-1 transition-all duration-300"
+              href="#hero"
+              className="inline-flex items-center gap-2 rounded-full border border-teal-300/20 bg-teal-400/10 px-5 py-3 text-sm font-semibold text-teal-200 transition-all duration-300 hover:bg-teal-400/20 hover:text-white"
             >
-              <FaGithub size={20} aria-hidden="true" />
-            </a>
-            <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn Profile"
-              className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300"
-            >
-              <FaLinkedin size={20} aria-hidden="true" />
-            </a>
-            <a
-              href={`mailto:${personalInfo.email}`}
-              aria-label="Send an Email"
-              className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-red-500 hover:-translate-y-1 transition-all duration-300"
-            >
-              <FaEnvelope size={20} aria-hidden="true" />
+              <FaArrowUp size={14} /> Back to top
             </a>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/5 text-center">
-          <p className="text-gray-500 text-sm">
-            &copy; {currentYear} Designed & Built by{" "}
-            <span className="text-purple-400">Omar Abdelglil</span>.
+        <div className="mt-12 border-t border-white/5 pt-6 text-center text-sm text-gray-500">
+          <p>
+            © {currentYear} Designed & built by{" "}
+            <span className="text-teal-300">Omar Abdelgilil</span>. All rights
+            reserved.
           </p>
         </div>
       </div>
