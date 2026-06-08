@@ -1,6 +1,10 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { personalInfo } from "./data/portfolioData";
 import { FaRocket, FaPalette, FaShieldAlt } from "react-icons/fa";
+
+const MotionSection = motion.section;
+const MotionDiv = motion.div;
 
 const aboutCards = [
   {
@@ -24,20 +28,38 @@ const aboutCards = [
 ];
 
 const About = () => {
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 28 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <section id="about" className="py-20 bg-[#060912] border-t border-gray-800">
+    <MotionSection
+      id="about"
+      className="py-20 bg-[#060912] border-t border-gray-800"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center mb-12">
+        <MotionDiv className="max-w-4xl mx-auto text-center mb-12" variants={itemVariants}>
           <p className="text-sm uppercase tracking-[0.36em] text-teal-300 mb-4">
             About Me
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-white wrap-break-word">
             A modern portfolio crafted for product-focused web experiences.
           </h2>
-        </div>
+        </MotionDiv>
 
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] items-center">
-          <div className="space-y-6 text-white">
+          <MotionDiv className="space-y-6 text-white" variants={itemVariants}>
             <p className="text-gray-300 leading-relaxed text-lg wrap-break-word">
               I&apos;m {personalInfo.name}, a frontend developer who turns ideas
               into polished user experiences. My portfolio showcases thoughtful
@@ -50,9 +72,10 @@ const About = () => {
 
             <div className="grid sm:grid-cols-3 gap-4">
               {aboutCards.map((item) => (
-                <div
+                <MotionDiv
                   key={item.title}
                   className="rounded-3xl border border-gray-800 bg-white/5 p-6 shadow-[0_18px_80px_rgba(15,23,42,0.25)] transition-all duration-300 hover:-translate-y-2 hover:border-teal-400/40 hover:bg-white/10 min-w-0"
+                  variants={itemVariants}
                 >
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-900/80 text-2xl mb-4">
                     {item.icon}
@@ -63,11 +86,11 @@ const About = () => {
                   <p className="text-sm text-gray-400 leading-relaxed wrap-break-word">
                     {item.description}
                   </p>
-                </div>
+                </MotionDiv>
 
               ))}
             </div>
-          </div>
+          </MotionDiv>
 
           <div className="rounded-[36px] border border-teal-500/10 bg-linear-to-br from-slate-950/95 via-slate-900/80 to-slate-950/95 p-8 shadow-xl">
             <div className="rounded-4xl border border-white/10 bg-[#07111b] p-8 text-white">
@@ -92,7 +115,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 };
 

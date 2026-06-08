@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
+
+const MotionNav = motion.nav;
 
 const navItems = [
   { label: "Home", id: "hero" },
@@ -8,6 +11,11 @@ const navItems = [
   { label: "Projects", id: "projects" },
   { label: "Contact", id: "contact" },
 ];
+
+const navVariants = {
+  hidden: { opacity: 0, y: -24 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +56,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#02040a]/95 backdrop-blur-xl shadow-black/20">
+    <nav
+      className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#02040a]/95 backdrop-blur-xl shadow-black/20"
+      variants={navVariants}
+      initial="hidden"
+      animate="visible"
+      transition={{ duration: 0.7, ease: "easeOut" }}
+    >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <a
           href="#hero"

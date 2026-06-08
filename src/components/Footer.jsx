@@ -1,12 +1,26 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp } from "react-icons/fa";
 import { personalInfo } from "./data/portfolioData";
 
 const Footer = () => {
+  const MotionFooter = motion.footer;
+
+  const footerVariants = {
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
+  };
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative z-10 border-t border-teal-300/10 bg-[#02050d]/90 py-12 text-white">
+    <MotionFooter
+      className="relative z-10 border-t border-teal-300/10 bg-[#02050d]/90 py-12 text-white"
+      variants={footerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="container mx-auto px-6">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.9fr_0.9fr] items-start max-w-full">
           <div>
@@ -100,7 +114,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
+    </MotionFooter>
   );
 };
 

@@ -1,11 +1,27 @@
 import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { skills } from "./data/portfolioData";
+
+
+const MotionSection = motion.section;
+const MotionDiv = motion.div;
+const MotionH2 = motion.h2;
 
 const Skills = () => {
   const [activeSkill, setActiveSkill] = useState(0);
   const [activeSubSkill, setActiveSubSkill] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 32 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,20 +53,28 @@ const Skills = () => {
   }, [activeSubSkill]);
 
   return (
-    <section
+    <MotionSection
       id="skills"
       ref={sectionRef}
       className="py-20 lg:py-32 border-t border-gray-800 relative"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12 md:mb-20">
+        <MotionH2
+          className="text-3xl md:text-4xl font-bold text-center text-white mb-12 md:mb-20"
+          variants={cardVariants}
+        >
           Technical <span className="text-teal-300">Arsenal</span>
-        </h2>
+        </MotionH2>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto items-start">
-          <div className="flex flex-col gap-4 md:gap-5">
+          <MotionDiv className="flex flex-col gap-4 md:gap-5" variants={cardVariants}>
             {skills.map((skill, index) => (
-              <button
+              <motion.button
                 key={skill.title}
                 onClick={() => setActiveSkill(index)}
                 className={`flex items-center gap-4 p-5 rounded-3xl cursor-pointer transition-all duration-300 border text-left ${
@@ -63,6 +87,10 @@ const Skills = () => {
                     : "bg-white/5 border-white/10 hover:border-teal-300/40 hover:bg-white/5"
                 }`}
                 style={{ transitionDelay: `${index * 80}ms` }}
+                variants={cardVariants}
+                initial="hidden"
+                animate={isVisible ? "visible" : "hidden"}
+                whileHover={{ y: -2 }}
               >
                 <div
                   className={`text-3xl transition-transform duration-300 ${activeSkill === index ? "scale-110" : ""}`}
@@ -77,11 +105,11 @@ const Skills = () => {
                     {skill.subSkills.length} tools
                   </p>
                 </div>
-              </button>
+              </motion.button>
             ))}
-          </div>
+          </MotionDiv>
 
-          <div className="relative rounded-4xl border border-white/10 bg-[#08101d]/90 p-8 shadow-[0_20px_70px_rgba(15,23,42,0.5)] min-h-112">
+          <MotionDiv className="relative rounded-4xl border border-white/10 bg-[#08101d]/90 p-8 shadow-[0_20px_70px_rgba(15,23,42,0.5)] min-h-112" variants={cardVariants}>
             <div className="absolute -top-7 right-5 h-24 w-24 rounded-full bg-teal-400/10 blur-3xl" />
             <div className="relative z-10">
               <div className="text-6xl md:text-7xl mb-6 text-teal-300 transition-transform duration-300">
@@ -111,7 +139,7 @@ const Skills = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </MotionDiv>
         </div>
       </div>
 
@@ -148,7 +176,7 @@ const Skills = () => {
           </div>
         </div>
       )}
-    </section>
+    </MotionSection>
   );
 };
 

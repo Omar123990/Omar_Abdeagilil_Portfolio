@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { personalInfo } from "./data/portfolioData";
 import { FaGithub, FaArrowRight } from "react-icons/fa";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
@@ -22,14 +23,39 @@ const Hero = () => {
     delaySpeed: 1700,
   });
 
+  const MotionSection = motion.section;
+  const MotionDiv = motion.div;
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 28 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section
       id="hero"
       className="min-h-screen py-20 sm:py-24 overflow-x-hidden flex items-center"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
     >
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid gap-10 lg:gap-16 lg:grid-cols-[1.1fr_0.9fr] items-center">
-          <div className="relative z-10">
+        <MotionDiv
+          className="grid gap-10 lg:gap-16 lg:grid-cols-[1.1fr_0.9fr] items-center"
+          variants={fadeUp}
+        >
+          <MotionDiv className="relative z-10" variants={fadeUp}>
             <span className="inline-flex items-center gap-3 rounded-full border border-teal-400/20 bg-teal-400/10 px-4 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm text-teal-200 font-medium mb-6 shadow-sm">
               <span className="h-2 w-2 rounded-full bg-teal-300 animate-pulse" />
               Available for new projects
@@ -86,9 +112,9 @@ const Hero = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </MotionDiv>
 
-          <div className="relative mt-8 lg:mt-0">
+          <MotionDiv className="relative mt-8 lg:mt-0" variants={fadeUp}>
             <div className="absolute -top-10 -right-4 sm:-top-14 sm:-right-10 h-24 w-24 sm:h-36 sm:w-36 rounded-full bg-teal-500/10 blur-3xl" />
             <div className="absolute bottom-0 left-0 h-20 w-20 sm:h-28 sm:w-28 rounded-full bg-purple-500/10 blur-3xl" />
 
@@ -115,8 +141,8 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </MotionDiv>
+        </MotionDiv>
       </div>
     </section>
   );
