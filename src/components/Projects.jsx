@@ -3,23 +3,11 @@ import { motion } from "framer-motion";
 import { personalInfo, projects } from "./data/portfolioData";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-const MotionSection = motion.section;
 const MotionDiv = motion.div;
 const MotionArticle = motion.article;
 
 const Projects = () => {
   const projectCardsRef = useRef([]);
-
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 32 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        staggerChildren: 0.12,
-      },
-    },
-  };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -27,19 +15,18 @@ const Projects = () => {
   };
 
   return (
-    <MotionSection
+    <div
       id="projects"
       className="py-16 sm:py-20 border-t border-gray-800 bg-transparent"
-      variants={sectionVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div className="container mx-auto px-4 sm:px-6">
         <MotionDiv
           className="max-w-3xl mx-auto text-center mb-12 sm:mb-16"
           variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <p className="text-xs sm:text-sm uppercase tracking-[0.35em] text-teal-300 mb-4 font-semibold">
             Featured Projects
@@ -60,8 +47,15 @@ const Projects = () => {
               ref={(el) => (projectCardsRef.current[index] = el)}
               className="group relative flex flex-col justify-between overflow-hidden rounded-3xl sm:rounded-4xl border border-white/10 bg-[#06111e]/95 shadow-[0_25px_80px_rgba(15,23,42,0.35)] min-w-0"
               variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.45,
+                delay: index * 0.08,
+                ease: "easeOut",
+              }}
               whileHover={{ y: -6, scale: 1.01 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
             >
               <a
                 href={project.liveLink}
@@ -137,7 +131,7 @@ const Projects = () => {
           </a>
         </div>
       </div>
-    </MotionSection>
+    </div>
   );
 };
 

@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { skills } from "./data/portfolioData";
 
-
-const MotionSection = motion.section;
 const MotionDiv = motion.div;
 const MotionH2 = motion.h2;
 
@@ -12,11 +10,6 @@ const Skills = () => {
   const [activeSubSkill, setActiveSubSkill] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
-
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 32 },
-    visible: { opacity: 1, y: 0 },
-  };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -53,26 +46,32 @@ const Skills = () => {
   }, [activeSubSkill]);
 
   return (
-    <MotionSection
+    <div
       id="skills"
       ref={sectionRef}
       className="py-20 lg:py-32 border-t border-gray-800 relative"
-      variants={sectionVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div className="container mx-auto px-4 md:px-6">
         <MotionH2
           className="text-3xl md:text-4xl font-bold text-center text-white mb-12 md:mb-20"
           variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           Technical <span className="text-teal-300">Arsenal</span>
         </MotionH2>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto items-start">
-          <MotionDiv className="flex flex-col gap-4 md:gap-5" variants={cardVariants}>
+          <MotionDiv
+            className="flex flex-col gap-4 md:gap-5"
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.06, ease: "easeOut" }}
+          >
             {skills.map((skill, index) => (
               <motion.button
                 key={skill.title}
@@ -109,7 +108,14 @@ const Skills = () => {
             ))}
           </MotionDiv>
 
-          <MotionDiv className="relative rounded-4xl border border-white/10 bg-[#08101d]/90 p-8 shadow-[0_20px_70px_rgba(15,23,42,0.5)] min-h-112" variants={cardVariants}>
+          <MotionDiv
+            className="relative rounded-4xl border border-white/10 bg-[#08101d]/90 p-8 shadow-[0_20px_70px_rgba(15,23,42,0.5)] min-h-112"
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
+          >
             <div className="absolute -top-7 right-5 h-24 w-24 rounded-full bg-teal-400/10 blur-3xl" />
             <div className="relative z-10">
               <div className="text-6xl md:text-7xl mb-6 text-teal-300 transition-transform duration-300">
@@ -176,7 +182,7 @@ const Skills = () => {
           </div>
         </div>
       )}
-    </MotionSection>
+    </div>
   );
 };
 

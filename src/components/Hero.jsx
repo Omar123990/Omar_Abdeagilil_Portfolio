@@ -23,18 +23,7 @@ const Hero = () => {
     delaySpeed: 1700,
   });
 
-  const MotionSection = motion.section;
   const MotionDiv = motion.div;
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
 
   const fadeUp = {
     hidden: { opacity: 0, y: 28 },
@@ -42,20 +31,25 @@ const Hero = () => {
   };
 
   return (
-    <section
+    <div
       id="hero"
       className="min-h-screen py-20 sm:py-24 overflow-x-hidden flex items-center"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
     >
       <div className="container mx-auto px-4 sm:px-6">
         <MotionDiv
           className="grid gap-10 lg:gap-16 lg:grid-cols-[1.1fr_0.9fr] items-center"
           variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.75, ease: "easeOut" }}
         >
-          <MotionDiv className="relative z-10" variants={fadeUp}>
+          <MotionDiv
+            className="relative z-10"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+          >
             <span className="inline-flex items-center gap-3 rounded-full border border-teal-400/20 bg-teal-400/10 px-4 py-2 sm:px-5 sm:py-3 text-xs sm:text-sm text-teal-200 font-medium mb-6 shadow-sm">
               <span className="h-2 w-2 rounded-full bg-teal-300 animate-pulse" />
               Available for new projects
@@ -114,11 +108,20 @@ const Hero = () => {
             </div>
           </MotionDiv>
 
-          <MotionDiv className="relative mt-8 lg:mt-0" variants={fadeUp}>
+          <MotionDiv
+            className="relative mt-8 lg:mt-0"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+          >
             <div className="absolute -top-10 -right-4 sm:-top-14 sm:-right-10 h-24 w-24 sm:h-36 sm:w-36 rounded-full bg-teal-500/10 blur-3xl" />
             <div className="absolute bottom-0 left-0 h-20 w-20 sm:h-28 sm:w-28 rounded-full bg-purple-500/10 blur-3xl" />
 
-            <div className="relative mx-auto max-w-[18rem] sm:max-w-sm overflow-hidden rounded-[28px] sm:rounded-[36px] border border-white/10 bg-linear-to-br from-slate-950/90 to-slate-900/90 p-4 sm:p-6 shadow-xl shadow-cyan-500/10 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl float-y">
+            <motion.div
+              className="relative mx-auto max-w-[18rem] sm:max-w-sm overflow-hidden rounded-[28px] sm:rounded-[36px] border border-white/10 bg-linear-to-br from-slate-950/90 to-slate-900/90 p-4 sm:p-6 shadow-xl shadow-cyan-500/10 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl float-y"
+              whileHover={{ y: -6, scale: 1.01, rotate: -1 }}
+            >
               <div className="rounded-3xl sm:rounded-4xl bg-[#05101d] p-4 sm:p-6 text-center">
                 <div className="relative mx-auto mb-4 sm:mb-6 h-52 w-52 sm:h-72 sm:w-72 overflow-hidden rounded-full border border-white/10 bg-slate-900 shadow-2xl">
                   <img
@@ -140,11 +143,11 @@ const Hero = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </MotionDiv>
         </MotionDiv>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -35,6 +35,9 @@ const Footer = () => {
               polished visual language. Reach out if you want a fast,
               responsive, and beautiful web product.
             </p>
+            <p className="mt-2 max-w-xl text-sm text-teal-300/90 leading-relaxed">
+              I studied Frontend at Route Academy.
+            </p>
           </div>
 
           <div className="space-y-4">

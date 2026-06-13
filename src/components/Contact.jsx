@@ -9,14 +9,8 @@ import {
   FaDownload,
 } from "react-icons/fa";
 
-const MotionSection = motion.section;
 const MotionDiv = motion.div;
 const MotionA = motion.a;
-
-const sectionVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0 },
-};
 
 const cardVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -40,17 +34,19 @@ const Contact = () => {
   const cvLink = "/omar_cv.pdf";
 
   return (
-    <MotionSection
+    <div
       id="contact"
       className="py-16 sm:py-20 bg-transparent border-t border-gray-800"
-      variants={sectionVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12 sm:mb-16">
+        <MotionDiv
+          className="text-center mb-12 sm:mb-16"
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Let's <span className="text-teal-300">Work Together</span>
           </h2>
@@ -59,12 +55,15 @@ const Contact = () => {
             Let&apos;s create a polished Next.js experience with a smooth,
             modern frontend that looks great on every screen.
           </p>
-        </div>
+        </MotionDiv>
 
         <MotionDiv
           className="max-w-5xl mx-auto rounded-3xl sm:rounded-[36px] border border-teal-300/10 bg-[#06111f]/90 p-5 sm:p-8 md:p-10 shadow-[0_35px_90px_rgba(16,185,129,0.12)] overflow-hidden"
           variants={cardVariants}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
         >
           <div className="grid gap-10 grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] items-center">
             <MotionDiv
@@ -162,7 +161,7 @@ const Contact = () => {
           </div>
         </MotionDiv>
       </div>
-    </MotionSection>
+    </div>
   );
 };
 

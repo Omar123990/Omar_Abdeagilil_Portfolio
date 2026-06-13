@@ -56,7 +56,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav
+    <MotionNav
       className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#02040a]/95 backdrop-blur-xl shadow-black/20"
       variants={navVariants}
       initial="hidden"
@@ -130,7 +130,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </MotionNav>
   );
 };
 
