@@ -6,6 +6,7 @@ import nutriPlanImg from "../../assets/NutriPlan.png";
 import freshCartImg from "../../assets/FreshCart - Google Chrome 11_04_2026 05_32_52 م.png";
 import CineStream from "../../assets/CineStream _ Watch Movies & TV Shows - Google Chrome 16_05_2026 02_50_02 م.png";
 import LUXE from "../../assets/LUXE.png";
+import FrenzyGames from '../../assets/FrenzyGames.png';
 
 import {
   FaHtml5,
@@ -212,6 +213,16 @@ export const projects = [
   },
   {
     id: 4,
+    title: "Frenzy Games",
+    description:
+      "A dynamic gaming platform with engaging features and a modern design.",
+    image: FrenzyGames,
+    liveLink: "https://frenzy-games.vercel.app/",
+    githubLink: "https://github.com/Omar123990/FrenzyGames.git",
+    tags: ["Next.js", "React-Query", "GameMonetize API", "Gaming Platform"],
+  },
+  {
+    id: 5,
     title: "QuizMaster",
     description:
       "An interactive trivia app with a playful interface and quick user feedback for a fun learning flow.",
@@ -221,7 +232,7 @@ export const projects = [
     tags: ["JavaScript", "OOP", "Interactive UI", "Quiz App"],
   },
   {
-    id: 5,
+    id: 6,
     title: "NutriPlan",
     description:
       "A wellness-oriented app concept centered on meal planning, guidance, and a calm visual experience.",
@@ -231,7 +242,7 @@ export const projects = [
     tags: ["UI Design", "Wellness", "Frontend"],
   },
   {
-    id: 6,
+    id: 7,
     title: "Clarity Digital",
     description:
       "A services-focused landing page built to communicate business value and encourage action clearly.",
@@ -243,7 +254,7 @@ export const projects = [
     tags: ["Landing Page", "Conversion", "Brand"],
   },
   {
-    id: 7,
+    id: 8,
     title: "Cosmos Dashboard",
     description:
       "A data-rich dashboard concept with an immersive space theme and clear visual hierarchy.",
