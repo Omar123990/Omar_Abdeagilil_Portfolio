@@ -26,7 +26,7 @@ const Projects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
         >
           <p className="text-xs sm:text-sm uppercase tracking-[0.35em] text-teal-300 mb-4 font-semibold">
             Featured Projects
@@ -51,11 +51,10 @@ const Projects = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               transition={{
-                duration: 0.45,
-                delay: index * 0.08,
+                duration: 0.18,
                 ease: "easeOut",
               }}
-              whileHover={{ y: -6, scale: 1.01 }}
+              whileHover={{ y: -4, scale: 1.005 }}
             >
               <a
                 href={project.liveLink}
@@ -69,16 +68,16 @@ const Projects = () => {
                     src={project.image}
                     alt={project.title}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-950/70 via-transparent to-transparent opacity-0 transition-opacity duration-150 group-hover:opacity-100" />
                 </div>
 
                 <div className="p-5 sm:p-6">
                   <span className="inline-flex rounded-full bg-teal-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-teal-200">
                     {index === 0 ? "Featured" : "Project"}
                   </span>
-                  <h3 className="mt-4 text-xl sm:text-2xl font-bold text-white transition-colors duration-300 group-hover:text-teal-300">
+                  <h3 className="mt-4 text-xl sm:text-2xl font-bold text-white transition-colors duration-150 group-hover:text-teal-300">
                     {project.title}
                   </h3>
                   <p className="mt-3 text-xs sm:text-sm leading-relaxed text-gray-300 line-clamp-3">
@@ -103,7 +102,7 @@ const Projects = () => {
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-300 transition-colors duration-300 hover:text-white cursor-pointer"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-gray-300 transition-colors duration-150 hover:text-white cursor-pointer"
                 >
                   <FaGithub size={16} aria-hidden="true" /> View code
                 </a>
@@ -111,7 +110,7 @@ const Projects = () => {
                   href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-teal-300/20 bg-teal-300/10 px-3.5 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-teal-200 transition-all duration-300 hover:bg-teal-300/20 hover:text-white cursor-pointer"
+                  className="inline-flex items-center gap-2 rounded-full border border-teal-300/20 bg-teal-300/10 px-3.5 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-teal-200 transition-all duration-150 hover:bg-teal-300/20 hover:text-white cursor-pointer"
                 >
                   <FaExternalLinkAlt size={12} aria-hidden="true" /> Live demo
                 </a>
